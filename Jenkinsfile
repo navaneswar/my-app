@@ -15,8 +15,20 @@ node {
 	   
 	   sh "mvn package"
    }
-   
+
+	
+	  stage('Testing'){
+	   // Build using maven
+	   
+	  
+   }
  
+	  stage('Deploy'){
+	   // Build using maven
+	   
+	  
+   }
+	
   // stage('Email Notification'){
 //		mail bcc: '', body: """Hi Team, You build successfully deployed
 //		                       Job URL : ${env.JOB_URL}
