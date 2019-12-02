@@ -1,6 +1,5 @@
 
 node {
-   def sonarUrl = 'sonar.host.url=http://172.31.30.136:9000'
    def mvn = tool (name: 'maven3', type: 'maven') + '/bin/mvn'
    stage('SCM Checkout'){
     // Clone repo
@@ -10,12 +9,16 @@ node {
    
    }
      
+	stage ('compile-package'){
+		   sh "mvn package"
+
+	}
 	
-   stage('Mvn Package'){
+   //stage('Mvn Package'){
 	   // Build using maven
 	   
-	   sh "${mvn} clean package deploy"
-   }
+	//   sh "${mvn} clean package deploy"
+ //  }
    
  
    stage('Email Notification'){
